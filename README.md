@@ -43,20 +43,31 @@ Saved Model
 FastAPI Prediction API
        ↓
 Frontend Dashboard
-Input Features
+## Input Features
 
 The model uses the following patient attributes:
 
-Age
-BMI
-Blood Pressure
-Glucose
-Cholesterol
-Smoking
-Physical Activity
-Medical History
+- Age
+- BMI
+- Blood Pressure
+- Glucose
+- Cholesterol
+- Smoking
+- Physical Activity
+- Medical History
 
-The target variable is:RiskLevel
+The target variable is:
+
+RiskLevel
+
+The model classifies the patient into three risk categories:
+
+- Low
+- Medium
+- High
+
+## Project Structure
+
 HealthGuardAI/
 │
 ├── backend/
@@ -77,30 +88,40 @@ HealthGuardAI/
 │
 ├── .gitignore
 └── README.md
-Technologies Used
-Machine Learning
-Python
-Pandas
-Scikit-learn
-Logistic Regression
-StandardScaler
-Joblib
-Backend
-Python
-FastAPI
-Pydantic
-Uvicorn
-Frontend
-React
-TypeScript
-Vite
-HTML
-CSS
-Development Tools
-Git
-GitHub
-VS Code
-Model
+
+## Technologies Used
+
+### Machine Learning
+
+- Python
+- Pandas
+- Scikit-learn
+- Logistic Regression
+- StandardScaler
+- Joblib
+
+### Backend
+
+- Python
+- FastAPI
+- Pydantic
+- Uvicorn
+
+### Frontend
+
+- React
+- TypeScript
+- Vite
+- HTML
+- CSS
+
+### Development Tools
+
+- Git
+- GitHub
+- VS Code
+
+## Model
 
 The prototype uses Logistic Regression as the classification algorithm.
 
@@ -108,25 +129,29 @@ The dataset is divided into training and testing sets. Numerical features are st
 
 The trained model and scaler are saved using Joblib and loaded by the FastAPI backend during prediction.
 
-Running the Project Locally
-1. Clone the Repository
+## Running the Project Locally
+
+### 1. Clone the Repository
+
 git clone https://github.com/sudhamayigunupudi/healthguard-ai-ui.git
+
 cd healthguard-ai-ui
-2. Backend Setup
+
+### 2. Backend Setup
 
 Create a Python virtual environment:
 
 python -m venv .venv
 
-Activate it on Windows:
+Activate the virtual environment on Windows:
 
 .venv\Scripts\activate
 
-Install the required packages:
+Install the required Python packages:
 
 pip install pandas scikit-learn joblib fastapi uvicorn pydantic
 
-Start the backend:
+Start the backend server:
 
 uvicorn backend.main:app --reload
 
@@ -137,33 +162,38 @@ http://127.0.0.1:8000
 FastAPI documentation:
 
 http://127.0.0.1:8000/docs
-3. Frontend Setup
+
+### 3. Frontend Setup
 
 Open another terminal and enter the frontend directory:
 
 cd frontend
 
-Install dependencies:
+Install the frontend dependencies:
 
 npm install
 
-Start the frontend:
+Start the frontend development server:
 
 npm run dev
 
 The frontend will normally be available at:
 
 http://localhost:8080
-How It Works
-The user enters patient information in the frontend.
-The frontend sends the information to the FastAPI /predict endpoint.
-The backend validates the input.
-The input features are transformed using the saved scaler.
-The trained Logistic Regression model generates a prediction.
-The backend returns the predicted risk level and class probabilities.
-The frontend displays the result.
-API Endpoint
-POST /predict
+
+## How It Works
+
+1. The user enters patient information in the frontend.
+2. The frontend sends the information to the FastAPI /predict endpoint.
+3. The backend validates the input.
+4. The input features are transformed using the saved scaler.
+5. The trained Logistic Regression model generates a prediction.
+6. The backend returns the predicted risk level and class probabilities.
+7. The frontend displays the result.
+
+## API Endpoint
+
+### POST /predict
 
 Example request:
 
@@ -188,42 +218,33 @@ Example response:
     "Medium": 0.0038
   }
 }
-Important Note About the Dataset
+
+## Important Note About the Dataset
 
 The project uses synthetic data created for demonstration and learning purposes.
 
 Therefore, model performance on this dataset should not be interpreted as evidence that the system can accurately predict real-world medical risk.
 
-Future Improvements
+## Future Improvements
 
 Possible future improvements include:
 
-Larger and more realistic datasets
-Additional machine-learning algorithms
-Better model comparison and validation
-Explainable AI techniques
-Improved feature engineering
-Model monitoring
-Cloud deployment
-Secure authentication
-Database integration
-Disclaimer
+- Larger and more realistic datasets
+- Additional machine-learning algorithms
+- Better model comparison and validation
+- Explainable AI techniques
+- Improved feature engineering
+- Model monitoring
+- Cloud deployment
+- Secure authentication
+- Database integration
+
+## Disclaimer
 
 HealthGuard AI is a student/hackathon learning project. It is not intended to diagnose, treat, prevent, or predict any medical condition in real patients.
 
 All patient information used for development and demonstration is synthetic.
 
-License
+## License
 
 This project is intended for educational and hackathon purposes.
-
-
-### After pasting
-
-1. **Ctrl + A** in `README.md`
-2. Delete the old content
-3. Paste everything above
-4. Press **Ctrl + S**
-5. **Don't run any Git commands yet.**
-
-Then tell me **“saved”**.
