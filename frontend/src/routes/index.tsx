@@ -291,8 +291,11 @@ function Index() {
 
     const error = validate(form);
     if (error) {
-      setValidationError(error);
-      return;
+      if (error) {
+        setValidationError(error);
+        setResult(null);
+        return;
+}
     }
 
     setStatus("loading");
