@@ -71,7 +71,7 @@ const EMPTY_FORM: PatientForm = {
  * MOCK prediction — placeholder heuristic for UI demonstration only.
  * Will be replaced by the real backend API call (handled by another team member).
  */
-function mockPredict(form: PatientForm): Promise<Prediction> {
+function Predictrisk(form: PatientForm): Promise<Prediction> {
   return new Promise((resolve) => {
     setTimeout(() => {
       let score = 0;
@@ -311,7 +311,7 @@ function Index() {
     setStatus("loading");
     setResult(null);
     try {
-      const prediction = await mockPredict(form);
+      const prediction = await Predictrisk(form);
       setResult(prediction);
       setStatus("success");
     } catch {
